@@ -1,0 +1,175 @@
+[gd_scene load_steps=12 format=3 uid="uid://b57vj2g5c3t17"]
+
+[ext_resource type="Script" path="res://Algorithm Scales/Scales.gd" id="1_l4lqd"]
+[ext_resource type="Texture2D" uid="uid://da80bp7dsngfn" path="res://Sprites/crossbar.png" id="2_vidq0"]
+[ext_resource type="Texture2D" uid="uid://bd7gg2w6fgx5x" path="res://Sprites/bar.png" id="3_5gis8"]
+[ext_resource type="Texture2D" uid="uid://cb77pp0ogo1lp" path="res://icon.svg" id="4_kdb8l"]
+[ext_resource type="Script" path="res://Algorithm Scales/Weith1.gd" id="5_f6507"]
+[ext_resource type="Texture2D" uid="uid://duxfpor66vwjc" path="res://Sprites/Weith1.png" id="6_65nko"]
+[ext_resource type="Script" path="res://Algorithm Scales/Weith1Area.gd" id="7_lj5ih"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_36rtk"]
+size = Vector2(209.5, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gobhj"]
+size = Vector2(196, 47)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_64i63"]
+size = Vector2(69, 68)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qfhom"]
+size = Vector2(164, 50)
+
+[node name="AlgorithmScales" type="Node2D"]
+
+[node name="Scales" type="Node2D" parent="."]
+script = ExtResource("1_l4lqd")
+
+[node name="Crossbar" type="Node2D" parent="Scales"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Scales/Crossbar"]
+position = Vector2(611, 98)
+texture = ExtResource("2_vidq0")
+
+[node name="LeftPlate" type="Node2D" parent="Scales"]
+position = Vector2(418, 202)
+
+[node name="TopBar" type="Sprite2D" parent="Scales/LeftPlate"]
+rotation = -1.57195
+texture = ExtResource("3_5gis8")
+
+[node name="LeftBar" type="Sprite2D" parent="Scales/LeftPlate"]
+position = Vector2(-49, 180)
+rotation = -1.0472
+texture = ExtResource("3_5gis8")
+
+[node name="RightBar" type="Sprite2D" parent="Scales/LeftPlate"]
+position = Vector2(49, 179)
+rotation = 1.0472
+texture = ExtResource("3_5gis8")
+
+[node name="BottonBar" type="Sprite2D" parent="Scales/LeftPlate"]
+position = Vector2(-1, 264)
+texture = ExtResource("3_5gis8")
+
+[node name="LeftArea" type="Area2D" parent="Scales/LeftPlate"]
+position = Vector2(-1, 228)
+metadata/_edit_group_ = true
+
+[node name="LeftCollisionShape" type="CollisionShape2D" parent="Scales/LeftPlate/LeftArea"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_36rtk")
+
+[node name="Sprite2D" type="Sprite2D" parent="Scales/LeftPlate/LeftArea"]
+z_index = -1
+texture = ExtResource("4_kdb8l")
+
+[node name="RightPlate" type="Node2D" parent="Scales"]
+position = Vector2(804, 201)
+
+[node name="TopBar" type="Sprite2D" parent="Scales/RightPlate"]
+rotation = -1.57195
+texture = ExtResource("3_5gis8")
+
+[node name="LeftBar" type="Sprite2D" parent="Scales/RightPlate"]
+position = Vector2(-49, 180)
+rotation = -1.0472
+texture = ExtResource("3_5gis8")
+
+[node name="RightBar" type="Sprite2D" parent="Scales/RightPlate"]
+position = Vector2(49, 179)
+rotation = 1.0472
+texture = ExtResource("3_5gis8")
+
+[node name="BottonBar" type="Sprite2D" parent="Scales/RightPlate"]
+position = Vector2(-1, 264)
+texture = ExtResource("3_5gis8")
+
+[node name="RightArea" type="Area2D" parent="Scales/RightPlate"]
+position = Vector2(-3, 224)
+
+[node name="RightCollisionShape" type="CollisionShape2D" parent="Scales/RightPlate/RightArea"]
+position = Vector2(1, 3)
+shape = SubResource("RectangleShape2D_gobhj")
+
+[node name="Sprite2D" type="Sprite2D" parent="Scales/RightPlate/RightArea"]
+z_index = -1
+texture = ExtResource("4_kdb8l")
+
+[node name="TestButtons" type="Node2D" parent="."]
+visible = false
+
+[node name="HeavyLeft" type="Button" parent="TestButtons"]
+offset_left = 91.0
+offset_top = 542.0
+offset_right = 226.0
+offset_bottom = 579.0
+text = "Heavy Left"
+
+[node name="LightLeft" type="Button" parent="TestButtons"]
+offset_left = 304.0
+offset_top = 540.0
+offset_right = 455.0
+offset_bottom = 578.0
+text = "Light Left"
+
+[node name="Center" type="Button" parent="TestButtons"]
+offset_left = 562.0
+offset_top = 533.0
+offset_right = 675.0
+offset_bottom = 574.0
+text = "Center"
+
+[node name="LightRight" type="Button" parent="TestButtons"]
+offset_left = 747.0
+offset_top = 532.0
+offset_right = 885.0
+offset_bottom = 570.0
+text = "Light Right"
+
+[node name="HeavyRight" type="Button" parent="TestButtons"]
+offset_left = 962.0
+offset_top = 536.0
+offset_right = 1084.0
+offset_bottom = 576.0
+text = "Heavy Right"
+
+[node name="WeithBar" type="Sprite2D" parent="."]
+position = Vector2(139, 165)
+texture = ExtResource("3_5gis8")
+
+[node name="Weith1" type="Node2D" parent="."]
+position = Vector2(133, 125)
+script = ExtResource("5_f6507")
+metadata/_edit_group_ = true
+
+[node name="Weith1Sprite" type="Sprite2D" parent="Weith1"]
+scale = Vector2(0.278689, 0.348958)
+texture = ExtResource("6_65nko")
+
+[node name="Weith1Area" type="Area2D" parent="Weith1"]
+position = Vector2(1.00006, 0.499969)
+script = ExtResource("7_lj5ih")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Weith1/Weith1Area"]
+position = Vector2(-1.00006, -0.499969)
+shape = SubResource("RectangleShape2D_64i63")
+
+[node name="RestNode1" type="Node2D" parent="."]
+position = Vector2(134, 136)
+metadata/_edit_group_ = true
+
+[node name="RestNode1Area" type="Area2D" parent="RestNode1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RestNode1/RestNode1Area"]
+position = Vector2(2, -1)
+shape = SubResource("RectangleShape2D_qfhom")
+
+[connection signal="area_entered" from="Scales/LeftPlate/LeftArea" to="Scales" method="_on_left_area_area_entered"]
+[connection signal="area_entered" from="Scales/RightPlate/RightArea" to="Weith1" method="_on_right_area_area_entered"]
+[connection signal="button_down" from="TestButtons/LightLeft" to="Scales" method="_on_light_left_button_down"]
+[connection signal="button_down" from="TestButtons/Center" to="Scales" method="_on_center_button_down"]
+[connection signal="button_down" from="TestButtons/LightRight" to="Scales" method="_on_light_right_button_down"]
+[connection signal="area_entered" from="Weith1/Weith1Area" to="Weith1" method="_on_area_2d_area_entered"]
+[connection signal="input_event" from="Weith1/Weith1Area" to="Weith1" method="_on_area_2d_input_event"]
