@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Balanza de despeje"
-run/main_scene="res://gravity_scales.tscn"
+run/main_scene="res://angle_scales.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 

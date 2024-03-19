@@ -1,12 +1,12 @@
 [gd_scene load_steps=12 format=3 uid="uid://b57vj2g5c3t17"]
 
-[ext_resource type="Script" path="res://Algorithm Scales/Scales.gd" id="1_l4lqd"]
+[ext_resource type="Script" path="res://Other Scales/Algorithm Scales/Scales.gd" id="1_l4lqd"]
 [ext_resource type="Texture2D" uid="uid://da80bp7dsngfn" path="res://Sprites/crossbar.png" id="2_vidq0"]
 [ext_resource type="Texture2D" uid="uid://bd7gg2w6fgx5x" path="res://Sprites/bar.png" id="3_5gis8"]
 [ext_resource type="Texture2D" uid="uid://cb77pp0ogo1lp" path="res://icon.svg" id="4_kdb8l"]
-[ext_resource type="Script" path="res://Algorithm Scales/Weith1.gd" id="5_f6507"]
+[ext_resource type="Script" path="res://Other Scales/Algorithm Scales/Weith1.gd" id="5_f6507"]
 [ext_resource type="Texture2D" uid="uid://duxfpor66vwjc" path="res://Sprites/Weith1.png" id="6_65nko"]
-[ext_resource type="Script" path="res://Algorithm Scales/Weith1Area.gd" id="7_lj5ih"]
+[ext_resource type="Script" path="res://Other Scales/Algorithm Scales/Weith1Area.gd" id="7_lj5ih"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_36rtk"]
 size = Vector2(209.5, 48)
