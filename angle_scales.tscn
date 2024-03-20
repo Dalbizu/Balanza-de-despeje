@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bw143tfxip5bn"]
+[gd_scene load_steps=7 format=3 uid="uid://bw143tfxip5bn"]
 
 [ext_resource type="Script" path="res://angle_scales.gd" id="1_6l07b"]
 [ext_resource type="Script" path="res://Scale.gd" id="1_xeh30"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" path="res://LeftPlate.gd" id="3_grs1s"]
 [ext_resource type="Script" path="res://RightPlate.gd" id="4_ps5g6"]
 [ext_resource type="Texture2D" uid="uid://bd7gg2w6fgx5x" path="res://Sprites/bar.png" id="4_xwv78"]
-[ext_resource type="Script" path="res://TextEdit.gd" id="7_8t6t6"]
 
 [node name="AngleScales" type="Node2D"]
 script = ExtResource("1_6l07b")
@@ -40,34 +39,27 @@ texture = ExtResource("4_xwv78")
 
 [node name="TestTools" type="Node2D" parent="."]
 
-[node name="Button" type="Button" parent="TestTools"]
-visible = false
-offset_left = 784.0
-offset_top = 810.0
-offset_right = 837.0
-offset_bottom = 843.0
-
-[node name="TextEdit" type="TextEdit" parent="TestTools"]
-visible = false
-offset_left = 572.0
-offset_top = 805.0
-offset_right = 713.0
-offset_bottom = 848.0
-script = ExtResource("7_8t6t6")
-
 [node name="ToLeftButton" type="Button" parent="TestTools"]
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 415.0
+offset_top = 729.0
+offset_right = 532.0
+offset_bottom = 767.0
+text = "Left"
 
 [node name="ToCenterButton" type="Button" parent="TestTools"]
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 670.0
+offset_top = 725.0
+offset_right = 799.0
+offset_bottom = 768.0
+text = "Center"
 
 [node name="ToRightButton" type="Button" parent="TestTools"]
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 917.0
+offset_top = 723.0
+offset_right = 1021.0
+offset_bottom = 770.0
+text = "Right"
 
-[connection signal="pressed" from="TestTools/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="TestTools/ToLeftButton" to="." method="_on_to_left_button_pressed"]
 [connection signal="pressed" from="TestTools/ToCenterButton" to="." method="_on_to_center_button_pressed"]
 [connection signal="pressed" from="TestTools/ToRightButton" to="." method="_on_to_right_button_pressed"]
