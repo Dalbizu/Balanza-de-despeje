@@ -38,17 +38,36 @@ position = Vector2(-7, 88)
 rotation = 1.5708
 texture = ExtResource("4_xwv78")
 
-[node name="TextEdit" type="TextEdit" parent="."]
+[node name="TestTools" type="Node2D" parent="."]
+
+[node name="Button" type="Button" parent="TestTools"]
+visible = false
+offset_left = 784.0
+offset_top = 810.0
+offset_right = 837.0
+offset_bottom = 843.0
+
+[node name="TextEdit" type="TextEdit" parent="TestTools"]
+visible = false
 offset_left = 572.0
 offset_top = 805.0
 offset_right = 713.0
 offset_bottom = 848.0
 script = ExtResource("7_8t6t6")
 
-[node name="Button" type="Button" parent="."]
-offset_left = 784.0
-offset_top = 810.0
-offset_right = 837.0
-offset_bottom = 843.0
+[node name="ToLeftButton" type="Button" parent="TestTools"]
+offset_right = 8.0
+offset_bottom = 8.0
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="ToCenterButton" type="Button" parent="TestTools"]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="ToRightButton" type="Button" parent="TestTools"]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[connection signal="pressed" from="TestTools/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="TestTools/ToLeftButton" to="." method="_on_to_left_button_pressed"]
+[connection signal="pressed" from="TestTools/ToCenterButton" to="." method="_on_to_center_button_pressed"]
+[connection signal="pressed" from="TestTools/ToRightButton" to="." method="_on_to_right_button_pressed"]
