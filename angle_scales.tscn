@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bw143tfxip5bn"]
+[gd_scene load_steps=10 format=3 uid="uid://bw143tfxip5bn"]
 
 [ext_resource type="Script" path="res://angle_scales.gd" id="1_6l07b"]
 [ext_resource type="Script" path="res://Scale.gd" id="1_xeh30"]
@@ -6,6 +6,9 @@
 [ext_resource type="Script" path="res://LeftPlate.gd" id="3_grs1s"]
 [ext_resource type="Script" path="res://RightPlate.gd" id="4_ps5g6"]
 [ext_resource type="Texture2D" uid="uid://bd7gg2w6fgx5x" path="res://Sprites/bar.png" id="4_xwv78"]
+[ext_resource type="Script" path="res://BoxFactory.gd" id="7_p0fci"]
+[ext_resource type="Texture2D" uid="uid://cb77pp0ogo1lp" path="res://icon.svg" id="8_jkqfj"]
+[ext_resource type="Script" path="res://Sprite2D.gd" id="9_l7t14"]
 
 [node name="AngleScales" type="Node2D"]
 script = ExtResource("1_6l07b")
@@ -59,6 +62,15 @@ offset_top = 723.0
 offset_right = 1021.0
 offset_bottom = 770.0
 text = "Right"
+
+[node name="BoxFactory" type="Node2D" parent="."]
+position = Vector2(134, 135)
+script = ExtResource("7_p0fci")
+
+[node name="Sprite2D" type="Sprite2D" parent="BoxFactory"]
+position = Vector2(1, -2)
+texture = ExtResource("8_jkqfj")
+script = ExtResource("9_l7t14")
 
 [connection signal="pressed" from="TestTools/ToLeftButton" to="." method="_on_to_left_button_pressed"]
 [connection signal="pressed" from="TestTools/ToCenterButton" to="." method="_on_to_center_button_pressed"]
